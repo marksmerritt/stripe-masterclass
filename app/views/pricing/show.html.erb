@@ -1,0 +1,16 @@
+<h1>Pricing</h1>
+
+<div>
+  <% @plans.each do |plan| %>
+    <div>
+      <h5><%= plan.name %></h5>
+      <h2>
+        <%= formatted_amount plan.amount %>
+        per <%= plan.interval %>
+      </h2>
+
+      <%= link_to "Subscribe", new_subscription_path(plan_id: plan.id) %>
+
+    </div>
+  <% end %>
+</div>

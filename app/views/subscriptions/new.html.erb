@@ -1,0 +1,48 @@
+<h1>Subscribe</h1>
+
+<div>
+
+  <% if current_user.card_last4 %>
+    <%= form_with url: subscription_path, local: true, id: "existing-card" do |form| %>
+      <div><%= current_user.card_brand %> ending in <%= current_user.card_last4 %></div>
+      <div>Expires <%= current_user.card_exp_month %> / <%= current_user.card_exp_year %></div>
+
+      <%= link_to "Use a new card", "#", id: "use-new-card" %>
+
+      <div>
+        <%= form.hidden_field :plan_id, value: @plan.id %>
+        <%= form.submit :subscribe %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div>
+    <%= form_with url: subscription_path, local: true, id: "payment-form", class: ("d-none" if current_user.card_last4?) do |form| %>
+      <div>
+        <label for="card-element">Credit or Debit Card</label>
+
+        <div id="card-element">
+        </div>
+
+        <div id="card-errors">
+        </div>
+
+        <div>
+          <label>Name on Card</label>
+
+          <%= form.text_field :name_on_card, id: "name-on-card", placeholder: "Full Name" %>
+        </div>
+
+        <div>
+          <%= form.hidden_field :plan_id, value: @plan.id %>
+          <%= form.submit :subscribe %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div>
+  <h5><%= @plan.name %></h5>
+  <h2><%= formatted_amount @plan.amount %> per <%= @plan.interval %></h2>
+</div>

@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @movie %>
+
+<% if user_signed_in? && current_user.subscribed? %>
+  <p>
+    <strong>Video url:</strong>
+    <%= @movie.video_url %>
+  </p>
+<% else %>
+  <%= link_to "Subscribe to watch", pricing_path %>
+<% end %>
+
+
+<div>
+  <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
+  <%= link_to "Back to movies", movies_path %>
+
+  <%= button_to "Destroy this movie", @movie, method: :delete %>
+</div>

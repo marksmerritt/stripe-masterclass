@@ -1,0 +1,58 @@
+<h1>Billing</h1>
+<% if @subscription && @subscription.on_trial? %>
+  <p>You are trialing the <strong><%= @subscription.stripe_plan %></strong> plan</p>
+  <p><%= link_to "Change Plan", edit_subscription_path %></p>
+<% elsif @subscription && @subscription.on_grace_period? %>
+  <p>Your subscription has been canceled and you have access until <%= @subscription.ends_at.to_date.to_s %></p>
+  <p><%= link_to "Resume Subscription", resume_subscription_path, method: :patch %></p>
+<% elsif @subscription && @subscription.active? %>
+  <p>You are subscribed to the <strong><%= @subscription.stripe_plan %></strong> plan.</p>
+  <p><%= link_to "Change Plan", edit_subscription_path %></p>
+<% else %>
+  <p>You are not subscribed. <%= link_to "Subscribe", pricing_path %></p>
+<% end %>
+
+<hr>
+
+<% if current_user.card_last4? %>
+  <div>
+    <%= current_user.card_brand %> ending in <%= current_user.card_last4 %>
+  </div>
+
+  <div>
+    Expires <%= current_user.card_exp_month %> / <%= current_user.card_exp_year %>
+  </div>
+
+  <%= link_to "Update card", edit_card_path %>
+<% else %>
+  <p>No card on file</p>
+  <%= link_to "Add Card", edit_card_path %>
+<% end %>
+
+<% if @subscription.active? && !@subscription.on_grace_period? %>
+  <hr>
+
+  <%= link_to "Cancel Subscription", subscription_path, method: :delete, data: { turbo_method: :delete, confirm: "Are you sure you want to cancel?" } %>
+<% end %>
+
+<h5>Invoices</h5>
+
+<table>
+  <thead>
+    <th>Date</th>
+    <th>Card</th>
+    <th>Amount</th>
+    <th>Receipt</th>
+  </thead>
+
+  <tbody>
+    <% current_user.charges.order(created_at: :desc).each do |charge| %>
+      <tr>
+        <td><%= charge.created_at.to_date.to_s %></td>
+        <td><%= charge.card_brand %> ending in <%= charge.card_last4 %></td>
+        <td><%= formatted_amount charge.amount %></td>
+        <td><%= link_to "Download", charge_path(charge, format: :pdf), target: :_blank %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

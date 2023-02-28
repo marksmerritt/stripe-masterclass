@@ -1,0 +1,36 @@
+<h1>Update Card</h1>
+
+<% if current_user.card_last4? %>
+  <div>
+      <%= current_user.card_brand %> ending in <%= current_user.card_last4 %>
+    </div>
+
+    <div>
+      Expires <%= current_user.card_exp_month %> / <%= current_user.card_exp_year %>
+    </div>
+  </div>
+
+  <br>
+<% end %>
+
+<%= form_with url: card_path, method: :patch, local: true, id: "payment-form", data: { setup_intent: @setup_intent.client_secret } do |form| %>
+  <div>
+    <label for="card-element">Credit or Debit Card</label>
+
+    <div id="card-element">
+    </div>
+
+    <div id="card-errors">
+    </div>
+
+    <div>
+      <label>Name on Card</label>
+
+      <%= form.text_field :name_on_card, id: "name-on-card", placeholder: "Full Name" %>
+    </div>
+
+    <div>
+      <%= form.submit "Update Card" %>
+    </div>
+  </div>
+<% end %>

@@ -74,3 +74,5 @@ end
 
 gem 'devise', '~> 4.9'
 gem 'stripe', '~> 8.3'
+gem 'stripe_event', '~> 2.7'
+gem 'receipts', '~> 2.2'
