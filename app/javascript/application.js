@@ -101,7 +101,7 @@ function setupStripe() {
   form.addEventListener("submit", (event) => {
     event.preventDefault()
 
-    let name = form.querySelector("#name-on-card").value
+    let name = form.querySelector("#name_on_card").value
 
     let data = {
       payment_method_data: {

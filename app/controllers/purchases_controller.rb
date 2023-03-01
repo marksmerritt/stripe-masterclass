@@ -6,6 +6,7 @@ class PurchasesController < ApplicationController
     @payment_intent = Stripe::PaymentIntent.create(
       amount: @product.amount,
       currency: "usd",
+      customer: current_user.stripe_id || current_user.stripe_customer.id
     )
   end
 
@@ -16,14 +17,14 @@ class PurchasesController < ApplicationController
       charge = @payment_intent.latest_charge
       card = charge.payment_method_details.card
 
-      Order.create(
+      @order = Order.create(
         stripe_id: charge.id,
         user: current_user,
         product: @product,
         card_brand: card.brand.titleize,
         card_last4: card.last4,
         card_exp_month: card.exp_month,
-        card_exp_month: card.exp_year
+        card_exp_year: card.exp_year
       )
 
       redirect_to root_path, notice: "Your order has been submitted"

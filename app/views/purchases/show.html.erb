@@ -1,6 +1,6 @@
 <h1>Purchase <%= @product.name %></h1>
 
-<%= form_with url: product_purchase_path(@product), local: true, id: "payment-form", data: { payment_intent_id: @payment_intent.client_secret } do |form| %>
+<%= form_with url: product_purchase_path(@product), local: true, id: "payment-form", data: { payment_intent: @payment_intent.client_secret } do |form| %>
   <div>
     <label for="card-element">
       Credit or Debit Card

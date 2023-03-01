@@ -1,19 +1,25 @@
 Rails.application.routes.draw do
   mount StripeEvent::Engine, at: '/webhooks/stripe'
 
-  resources :movies
-  root 'home#index'
+  # User login
   devise_for :users
 
-  resources :products do
-    resource :purchase
-  end
+  # Movies that are protected by subscriptions
+  resources :movies
 
+  # Payments/Subscriptions
   resource :card
-  resource :pricing, controller: "pricing"
-  resource :subscription, controller: "subscriptions" do
+  resource :pricing, controller: :pricing
+  resource :subscription do
     patch :resume
   end
   resources :payments
   resources :charges
+
+  # One time payments
+  resources :products do
+    resource :purchase
+  end
+
+  root 'home#index'
 end
