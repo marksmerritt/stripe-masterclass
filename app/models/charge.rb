@@ -42,7 +42,7 @@ class Charge < ApplicationRecord
       ["Charged to", "#{card_brand} ending in #{card_last4}"]
     ]
 
-    line_items << ["Amount Refunded", ApplicationController.helpers.formatted_amount(amount_refunded)]] if amount_refunded?
+    line_items << ["Amount Refunded", ApplicationController.helpers.formatted_amount(amount_refunded)] if amount_refunded?
     line_items
   end
 

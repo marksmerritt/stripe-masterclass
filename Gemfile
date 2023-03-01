@@ -70,6 +70,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'vcr', '~> 6.1'
+  gem 'webmock', '~> 3.18', '>= 3.18.1'
 end
 
 gem 'devise', '~> 4.9'

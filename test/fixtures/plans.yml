@@ -1,13 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  amount: 1
-  interval: MyString
-  stripe_id: MyString
-
-two:
-  name: MyString
-  amount: 1
-  interval: MyString
-  stripe_id: MyString
+small_monthly:
+  name: Small Monthly
+  amount: 2500
+  interval: monthly
+  stripe_id: price_1MfpWoAd1SFRKFWWP7BuU2cA

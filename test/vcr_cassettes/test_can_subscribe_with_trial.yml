@@ -1,0 +1,686 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/customers
+    body:
+      encoding: UTF-8
+      string: email=one%40example.com&name=User+One
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/8.3.0
+      Authorization:
+      - Bearer sk_test_51MfPhiAd1SFRKFWWefZlKc17ulQ81E6bowNhoqWQnENuh3wATmbk5Qaqcr2dcPjxd2YFBK5aGMafQSRLZU69QJI300tkgqUXGR
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_N1CHj7Upau9TlU","request_duration_ms":6}}'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"8.3.0","lang":"ruby","lang_version":"2.7.5 p203 (2021-11-24)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
+        version 5.4.0-100-generic (buildd@lcy02-amd64-060) (gcc version 7.5.0 (Ubuntu
+        7.5.0-3ubuntu1~18.04)) #113~18.04.1-Ubuntu SMP Mon Feb 7 15:02:59 UTC 2022","hostname":"mmerritt-XPS-13-9360"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 01 Mar 2023 15:28:59 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '633'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Idempotency-Key:
+      - 84018640-d4cc-4a3e-a122-1e43e56c3566
+      Original-Request:
+      - req_6Fa2gTPiATBBFS
+      Request-Id:
+      - req_6Fa2gTPiATBBFS
+      Stripe-Should-Retry:
+      - 'false'
+      Stripe-Version:
+      - '2022-11-15'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id": "cus_NRl65xXP4QCnkD",
+          "object": "customer",
+          "address": null,
+          "balance": 0,
+          "created": 1677684539,
+          "currency": null,
+          "default_source": null,
+          "delinquent": false,
+          "description": null,
+          "discount": null,
+          "email": "one@example.com",
+          "invoice_prefix": "F4B75781",
+          "invoice_settings": {
+            "custom_fields": null,
+            "default_payment_method": null,
+            "footer": null,
+            "rendering_options": null
+          },
+          "livemode": false,
+          "metadata": {},
+          "name": "User One",
+          "next_invoice_sequence": 1,
+          "phone": null,
+          "preferred_locales": [],
+          "shipping": null,
+          "tax_exempt": "none",
+          "test_clock": null
+        }
+  recorded_at: Wed, 01 Mar 2023 15:28:59 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/payment_methods/pm_card_visa/attach
+    body:
+      encoding: UTF-8
+      string: customer=cus_NRl65xXP4QCnkD
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/8.3.0
+      Authorization:
+      - Bearer sk_test_51MfPhiAd1SFRKFWWefZlKc17ulQ81E6bowNhoqWQnENuh3wATmbk5Qaqcr2dcPjxd2YFBK5aGMafQSRLZU69QJI300tkgqUXGR
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_6Fa2gTPiATBBFS","request_duration_ms":597}}'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"8.3.0","lang":"ruby","lang_version":"2.7.5 p203 (2021-11-24)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
+        version 5.4.0-100-generic (buildd@lcy02-amd64-060) (gcc version 7.5.0 (Ubuntu
+        7.5.0-3ubuntu1~18.04)) #113~18.04.1-Ubuntu SMP Mon Feb 7 15:02:59 UTC 2022","hostname":"mmerritt-XPS-13-9360"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 01 Mar 2023 15:29:00 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '939'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Idempotency-Key:
+      - 8b706378-8e2e-4e7c-83c6-6b47958c779d
+      Original-Request:
+      - req_vsaAclEb9DuY38
+      Request-Id:
+      - req_vsaAclEb9DuY38
+      Stripe-Should-Retry:
+      - 'false'
+      Stripe-Version:
+      - '2022-11-15'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id": "pm_1MgraSAd1SFRKFWWLh5GIuJE",
+          "object": "payment_method",
+          "billing_details": {
+            "address": {
+              "city": null,
+              "country": null,
+              "line1": null,
+              "line2": null,
+              "postal_code": null,
+              "state": null
+            },
+            "email": null,
+            "name": null,
+            "phone": null
+          },
+          "card": {
+            "brand": "visa",
+            "checks": {
+              "address_line1_check": null,
+              "address_postal_code_check": null,
+              "cvc_check": null
+            },
+            "country": "US",
+            "exp_month": 3,
+            "exp_year": 2024,
+            "fingerprint": "i9TX7BFrUXiwI4Fl",
+            "funding": "credit",
+            "generated_from": null,
+            "last4": "4242",
+            "networks": {
+              "available": [
+                "visa"
+              ],
+              "preferred": null
+            },
+            "three_d_secure_usage": {
+              "supported": true
+            },
+            "wallet": null
+          },
+          "created": 1677684540,
+          "customer": "cus_NRl65xXP4QCnkD",
+          "livemode": false,
+          "metadata": {},
+          "type": "card"
+        }
+  recorded_at: Wed, 01 Mar 2023 15:29:00 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/customers/cus_NRl65xXP4QCnkD
+    body:
+      encoding: UTF-8
+      string: invoice_settings[default_payment_method]=pm_1MgraSAd1SFRKFWWLh5GIuJE
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/8.3.0
+      Authorization:
+      - Bearer sk_test_51MfPhiAd1SFRKFWWefZlKc17ulQ81E6bowNhoqWQnENuh3wATmbk5Qaqcr2dcPjxd2YFBK5aGMafQSRLZU69QJI300tkgqUXGR
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_vsaAclEb9DuY38","request_duration_ms":750}}'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"8.3.0","lang":"ruby","lang_version":"2.7.5 p203 (2021-11-24)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
+        version 5.4.0-100-generic (buildd@lcy02-amd64-060) (gcc version 7.5.0 (Ubuntu
+        7.5.0-3ubuntu1~18.04)) #113~18.04.1-Ubuntu SMP Mon Feb 7 15:02:59 UTC 2022","hostname":"mmerritt-XPS-13-9360"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 01 Mar 2023 15:29:01 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '658'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Idempotency-Key:
+      - 002c1db1-c716-468c-b4ce-b819e0468a7b
+      Original-Request:
+      - req_3xyMmFR8Is0FyE
+      Request-Id:
+      - req_3xyMmFR8Is0FyE
+      Stripe-Should-Retry:
+      - 'false'
+      Stripe-Version:
+      - '2022-11-15'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id": "cus_NRl65xXP4QCnkD",
+          "object": "customer",
+          "address": null,
+          "balance": 0,
+          "created": 1677684539,
+          "currency": null,
+          "default_source": null,
+          "delinquent": false,
+          "description": null,
+          "discount": null,
+          "email": "one@example.com",
+          "invoice_prefix": "F4B75781",
+          "invoice_settings": {
+            "custom_fields": null,
+            "default_payment_method": "pm_1MgraSAd1SFRKFWWLh5GIuJE",
+            "footer": null,
+            "rendering_options": null
+          },
+          "livemode": false,
+          "metadata": {},
+          "name": "User One",
+          "next_invoice_sequence": 1,
+          "phone": null,
+          "preferred_locales": [],
+          "shipping": null,
+          "tax_exempt": "none",
+          "test_clock": null
+        }
+  recorded_at: Wed, 01 Mar 2023 15:29:01 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/subscriptions
+    body:
+      encoding: UTF-8
+      string: customer=cus_NRl65xXP4QCnkD&items[0][plan]=price_1MfpWoAd1SFRKFWWP7BuU2cA&expand[0]=latest_invoice.payment_intent&off_session=true&trial_period_days=5
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/8.3.0
+      Authorization:
+      - Bearer sk_test_51MfPhiAd1SFRKFWWefZlKc17ulQ81E6bowNhoqWQnENuh3wATmbk5Qaqcr2dcPjxd2YFBK5aGMafQSRLZU69QJI300tkgqUXGR
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_3xyMmFR8Is0FyE","request_duration_ms":327}}'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"8.3.0","lang":"ruby","lang_version":"2.7.5 p203 (2021-11-24)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
+        version 5.4.0-100-generic (buildd@lcy02-amd64-060) (gcc version 7.5.0 (Ubuntu
+        7.5.0-3ubuntu1~18.04)) #113~18.04.1-Ubuntu SMP Mon Feb 7 15:02:59 UTC 2022","hostname":"mmerritt-XPS-13-9360"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 01 Mar 2023 15:29:02 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '9396'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Idempotency-Key:
+      - 55c865d6-619a-4db6-8cf7-4a6a15f65cbb
+      Original-Request:
+      - req_RJqK6l5OA53TYK
+      Request-Id:
+      - req_RJqK6l5OA53TYK
+      Stripe-Should-Retry:
+      - 'false'
+      Stripe-Version:
+      - '2022-11-15'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id": "sub_1MgraTAd1SFRKFWWoWmA2ZYV",
+          "object": "subscription",
+          "application": null,
+          "application_fee_percent": null,
+          "automatic_tax": {
+            "enabled": false
+          },
+          "billing_cycle_anchor": 1678116541,
+          "billing_thresholds": null,
+          "cancel_at": null,
+          "cancel_at_period_end": false,
+          "canceled_at": null,
+          "collection_method": "charge_automatically",
+          "created": 1677684541,
+          "currency": "usd",
+          "current_period_end": 1678116541,
+          "current_period_start": 1677684541,
+          "customer": "cus_NRl65xXP4QCnkD",
+          "days_until_due": null,
+          "default_payment_method": null,
+          "default_source": null,
+          "default_tax_rates": [],
+          "description": null,
+          "discount": null,
+          "ended_at": null,
+          "items": {
+            "object": "list",
+            "data": [
+              {
+                "id": "si_NRl6zoNrwgt3Hb",
+                "object": "subscription_item",
+                "billing_thresholds": null,
+                "created": 1677684541,
+                "metadata": {},
+                "plan": {
+                  "id": "price_1MfpWoAd1SFRKFWWP7BuU2cA",
+                  "object": "plan",
+                  "active": true,
+                  "aggregate_usage": null,
+                  "amount": 2500,
+                  "amount_decimal": "2500",
+                  "billing_scheme": "per_unit",
+                  "created": 1677438298,
+                  "currency": "usd",
+                  "interval": "month",
+                  "interval_count": 1,
+                  "livemode": false,
+                  "metadata": {},
+                  "nickname": null,
+                  "product": "prod_NQguaczEk8368M",
+                  "tiers_mode": null,
+                  "transform_usage": null,
+                  "trial_period_days": null,
+                  "usage_type": "licensed"
+                },
+                "price": {
+                  "id": "price_1MfpWoAd1SFRKFWWP7BuU2cA",
+                  "object": "price",
+                  "active": true,
+                  "billing_scheme": "per_unit",
+                  "created": 1677438298,
+                  "currency": "usd",
+                  "custom_unit_amount": null,
+                  "livemode": false,
+                  "lookup_key": null,
+                  "metadata": {},
+                  "nickname": null,
+                  "product": "prod_NQguaczEk8368M",
+                  "recurring": {
+                    "aggregate_usage": null,
+                    "interval": "month",
+                    "interval_count": 1,
+                    "trial_period_days": null,
+                    "usage_type": "licensed"
+                  },
+                  "tax_behavior": "exclusive",
+                  "tiers_mode": null,
+                  "transform_quantity": null,
+                  "type": "recurring",
+                  "unit_amount": 2500,
+                  "unit_amount_decimal": "2500"
+                },
+                "quantity": 1,
+                "subscription": "sub_1MgraTAd1SFRKFWWoWmA2ZYV",
+                "tax_rates": []
+              }
+            ],
+            "has_more": false,
+            "total_count": 1,
+            "url": "/v1/subscription_items?subscription=sub_1MgraTAd1SFRKFWWoWmA2ZYV"
+          },
+          "latest_invoice": {
+            "id": "in_1MgraTAd1SFRKFWWvqFhYbwE",
+            "object": "invoice",
+            "account_country": "US",
+            "account_name": "Merritt Solutions LLC",
+            "account_tax_ids": null,
+            "amount_due": 0,
+            "amount_paid": 0,
+            "amount_remaining": 0,
+            "amount_shipping": 0,
+            "application": null,
+            "application_fee_amount": null,
+            "attempt_count": 0,
+            "attempted": true,
+            "auto_advance": false,
+            "automatic_tax": {
+              "enabled": false,
+              "status": null
+            },
+            "billing_reason": "subscription_create",
+            "charge": null,
+            "collection_method": "charge_automatically",
+            "created": 1677684541,
+            "currency": "usd",
+            "custom_fields": null,
+            "customer": "cus_NRl65xXP4QCnkD",
+            "customer_address": null,
+            "customer_email": "one@example.com",
+            "customer_name": "User One",
+            "customer_phone": null,
+            "customer_shipping": null,
+            "customer_tax_exempt": "none",
+            "customer_tax_ids": [],
+            "default_payment_method": null,
+            "default_source": null,
+            "default_tax_rates": [],
+            "description": null,
+            "discount": null,
+            "discounts": [],
+            "due_date": null,
+            "ending_balance": 0,
+            "footer": null,
+            "from_invoice": null,
+            "hosted_invoice_url": "https://invoice.stripe.com/i/acct_1MfPhiAd1SFRKFWW/test_YWNjdF8xTWZQaGlBZDFTRlJLRldXLF9OUmw2Vkd6SDNVU1lCY3I4bHBKUjVhbTA5bWxORTROLDY4MjI1MzQy0200dB5UGhXz?s=ap",
+            "invoice_pdf": "https://pay.stripe.com/invoice/acct_1MfPhiAd1SFRKFWW/test_YWNjdF8xTWZQaGlBZDFTRlJLRldXLF9OUmw2Vkd6SDNVU1lCY3I4bHBKUjVhbTA5bWxORTROLDY4MjI1MzQy0200dB5UGhXz/pdf?s=ap",
+            "last_finalization_error": null,
+            "latest_revision": null,
+            "lines": {
+              "object": "list",
+              "data": [
+                {
+                  "id": "il_1MgraTAd1SFRKFWWPFYC9Qq8",
+                  "object": "line_item",
+                  "amount": 0,
+                  "amount_excluding_tax": 0,
+                  "currency": "usd",
+                  "description": "Trial period for Test Subscription",
+                  "discount_amounts": [],
+                  "discountable": true,
+                  "discounts": [],
+                  "livemode": false,
+                  "metadata": {},
+                  "period": {
+                    "end": 1678116541,
+                    "start": 1677684541
+                  },
+                  "plan": {
+                    "id": "price_1MfpWoAd1SFRKFWWP7BuU2cA",
+                    "object": "plan",
+                    "active": true,
+                    "aggregate_usage": null,
+                    "amount": 2500,
+                    "amount_decimal": "2500",
+                    "billing_scheme": "per_unit",
+                    "created": 1677438298,
+                    "currency": "usd",
+                    "interval": "month",
+                    "interval_count": 1,
+                    "livemode": false,
+                    "metadata": {},
+                    "nickname": null,
+                    "product": "prod_NQguaczEk8368M",
+                    "tiers_mode": null,
+                    "transform_usage": null,
+                    "trial_period_days": null,
+                    "usage_type": "licensed"
+                  },
+                  "price": {
+                    "id": "price_1MfpWoAd1SFRKFWWP7BuU2cA",
+                    "object": "price",
+                    "active": true,
+                    "billing_scheme": "per_unit",
+                    "created": 1677438298,
+                    "currency": "usd",
+                    "custom_unit_amount": null,
+                    "livemode": false,
+                    "lookup_key": null,
+                    "metadata": {},
+                    "nickname": null,
+                    "product": "prod_NQguaczEk8368M",
+                    "recurring": {
+                      "aggregate_usage": null,
+                      "interval": "month",
+                      "interval_count": 1,
+                      "trial_period_days": null,
+                      "usage_type": "licensed"
+                    },
+                    "tax_behavior": "exclusive",
+                    "tiers_mode": null,
+                    "transform_quantity": null,
+                    "type": "recurring",
+                    "unit_amount": 2500,
+                    "unit_amount_decimal": "2500"
+                  },
+                  "proration": false,
+                  "proration_details": {
+                    "credited_items": null
+                  },
+                  "quantity": 1,
+                  "subscription": "sub_1MgraTAd1SFRKFWWoWmA2ZYV",
+                  "subscription_item": "si_NRl6zoNrwgt3Hb",
+                  "tax_amounts": [],
+                  "tax_rates": [],
+                  "type": "subscription",
+                  "unit_amount_excluding_tax": "0"
+                }
+              ],
+              "has_more": false,
+              "total_count": 1,
+              "url": "/v1/invoices/in_1MgraTAd1SFRKFWWvqFhYbwE/lines"
+            },
+            "livemode": false,
+            "metadata": {},
+            "next_payment_attempt": null,
+            "number": "F4B75781-0001",
+            "on_behalf_of": null,
+            "paid": true,
+            "paid_out_of_band": false,
+            "payment_intent": null,
+            "payment_settings": {
+              "default_mandate": null,
+              "payment_method_options": null,
+              "payment_method_types": null
+            },
+            "period_end": 1677684541,
+            "period_start": 1677684541,
+            "post_payment_credit_notes_amount": 0,
+            "pre_payment_credit_notes_amount": 0,
+            "quote": null,
+            "receipt_number": null,
+            "rendering_options": null,
+            "shipping_cost": null,
+            "shipping_details": null,
+            "starting_balance": 0,
+            "statement_descriptor": null,
+            "status": "paid",
+            "status_transitions": {
+              "finalized_at": 1677684541,
+              "marked_uncollectible_at": null,
+              "paid_at": 1677684541,
+              "voided_at": null
+            },
+            "subscription": "sub_1MgraTAd1SFRKFWWoWmA2ZYV",
+            "subtotal": 0,
+            "subtotal_excluding_tax": 0,
+            "tax": null,
+            "test_clock": null,
+            "total": 0,
+            "total_discount_amounts": [],
+            "total_excluding_tax": 0,
+            "total_tax_amounts": [],
+            "transfer_data": null,
+            "webhooks_delivered_at": null
+          },
+          "livemode": false,
+          "metadata": {},
+          "next_pending_invoice_item_invoice": null,
+          "on_behalf_of": null,
+          "pause_collection": null,
+          "payment_settings": {
+            "payment_method_options": null,
+            "payment_method_types": null,
+            "save_default_payment_method": "off"
+          },
+          "pending_invoice_item_interval": null,
+          "pending_setup_intent": null,
+          "pending_update": null,
+          "plan": {
+            "id": "price_1MfpWoAd1SFRKFWWP7BuU2cA",
+            "object": "plan",
+            "active": true,
+            "aggregate_usage": null,
+            "amount": 2500,
+            "amount_decimal": "2500",
+            "billing_scheme": "per_unit",
+            "created": 1677438298,
+            "currency": "usd",
+            "interval": "month",
+            "interval_count": 1,
+            "livemode": false,
+            "metadata": {},
+            "nickname": null,
+            "product": "prod_NQguaczEk8368M",
+            "tiers_mode": null,
+            "transform_usage": null,
+            "trial_period_days": null,
+            "usage_type": "licensed"
+          },
+          "quantity": 1,
+          "schedule": null,
+          "start_date": 1677684541,
+          "status": "trialing",
+          "test_clock": null,
+          "transfer_data": null,
+          "trial_end": 1678116541,
+          "trial_settings": {
+            "end_behavior": {
+              "missing_payment_method": "create_invoice"
+            }
+          },
+          "trial_start": 1677684541
+        }
+  recorded_at: Wed, 01 Mar 2023 15:29:02 GMT
+recorded_with: VCR 6.1.0

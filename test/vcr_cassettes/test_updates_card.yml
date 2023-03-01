@@ -1,0 +1,304 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/customers
+    body:
+      encoding: UTF-8
+      string: email=one%40example.com&name=User+One
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/8.3.0
+      Authorization:
+      - Bearer sk_test_51MfPhiAd1SFRKFWWefZlKc17ulQ81E6bowNhoqWQnENuh3wATmbk5Qaqcr2dcPjxd2YFBK5aGMafQSRLZU69QJI300tkgqUXGR
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"8.3.0","lang":"ruby","lang_version":"2.7.5 p203 (2021-11-24)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
+        version 5.4.0-100-generic (buildd@lcy02-amd64-060) (gcc version 7.5.0 (Ubuntu
+        7.5.0-3ubuntu1~18.04)) #113~18.04.1-Ubuntu SMP Mon Feb 7 15:02:59 UTC 2022","hostname":"mmerritt-XPS-13-9360"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 01 Mar 2023 15:10:28 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '633'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Idempotency-Key:
+      - 1469aa7b-3a44-492b-998d-5e62fa645f1b
+      Original-Request:
+      - req_UkpQPROUPq5u0c
+      Request-Id:
+      - req_UkpQPROUPq5u0c
+      Stripe-Should-Retry:
+      - 'false'
+      Stripe-Version:
+      - '2022-11-15'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id": "cus_NRkod4P1gHu3ce",
+          "object": "customer",
+          "address": null,
+          "balance": 0,
+          "created": 1677683427,
+          "currency": null,
+          "default_source": null,
+          "delinquent": false,
+          "description": null,
+          "discount": null,
+          "email": "one@example.com",
+          "invoice_prefix": "2324C8C2",
+          "invoice_settings": {
+            "custom_fields": null,
+            "default_payment_method": null,
+            "footer": null,
+            "rendering_options": null
+          },
+          "livemode": false,
+          "metadata": {},
+          "name": "User One",
+          "next_invoice_sequence": 1,
+          "phone": null,
+          "preferred_locales": [],
+          "shipping": null,
+          "tax_exempt": "none",
+          "test_clock": null
+        }
+  recorded_at: Wed, 01 Mar 2023 15:10:27 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/payment_methods/pm_card_visa/attach
+    body:
+      encoding: UTF-8
+      string: customer=cus_NRkod4P1gHu3ce
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/8.3.0
+      Authorization:
+      - Bearer sk_test_51MfPhiAd1SFRKFWWefZlKc17ulQ81E6bowNhoqWQnENuh3wATmbk5Qaqcr2dcPjxd2YFBK5aGMafQSRLZU69QJI300tkgqUXGR
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_UkpQPROUPq5u0c","request_duration_ms":640}}'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"8.3.0","lang":"ruby","lang_version":"2.7.5 p203 (2021-11-24)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
+        version 5.4.0-100-generic (buildd@lcy02-amd64-060) (gcc version 7.5.0 (Ubuntu
+        7.5.0-3ubuntu1~18.04)) #113~18.04.1-Ubuntu SMP Mon Feb 7 15:02:59 UTC 2022","hostname":"mmerritt-XPS-13-9360"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 01 Mar 2023 15:10:29 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '939'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Idempotency-Key:
+      - d9ea1da6-9293-4945-9798-c3058314d384
+      Original-Request:
+      - req_SRiJtj1XYijt8i
+      Request-Id:
+      - req_SRiJtj1XYijt8i
+      Stripe-Should-Retry:
+      - 'false'
+      Stripe-Version:
+      - '2022-11-15'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id": "pm_1MgrIWAd1SFRKFWW7Em1vcyf",
+          "object": "payment_method",
+          "billing_details": {
+            "address": {
+              "city": null,
+              "country": null,
+              "line1": null,
+              "line2": null,
+              "postal_code": null,
+              "state": null
+            },
+            "email": null,
+            "name": null,
+            "phone": null
+          },
+          "card": {
+            "brand": "visa",
+            "checks": {
+              "address_line1_check": null,
+              "address_postal_code_check": null,
+              "cvc_check": null
+            },
+            "country": "US",
+            "exp_month": 3,
+            "exp_year": 2024,
+            "fingerprint": "i9TX7BFrUXiwI4Fl",
+            "funding": "credit",
+            "generated_from": null,
+            "last4": "4242",
+            "networks": {
+              "available": [
+                "visa"
+              ],
+              "preferred": null
+            },
+            "three_d_secure_usage": {
+              "supported": true
+            },
+            "wallet": null
+          },
+          "created": 1677683428,
+          "customer": "cus_NRkod4P1gHu3ce",
+          "livemode": false,
+          "metadata": {},
+          "type": "card"
+        }
+  recorded_at: Wed, 01 Mar 2023 15:10:28 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/customers/cus_NRkod4P1gHu3ce
+    body:
+      encoding: UTF-8
+      string: invoice_settings[default_payment_method]=pm_1MgrIWAd1SFRKFWW7Em1vcyf
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/8.3.0
+      Authorization:
+      - Bearer sk_test_51MfPhiAd1SFRKFWWefZlKc17ulQ81E6bowNhoqWQnENuh3wATmbk5Qaqcr2dcPjxd2YFBK5aGMafQSRLZU69QJI300tkgqUXGR
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_SRiJtj1XYijt8i","request_duration_ms":850}}'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"8.3.0","lang":"ruby","lang_version":"2.7.5 p203 (2021-11-24)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
+        version 5.4.0-100-generic (buildd@lcy02-amd64-060) (gcc version 7.5.0 (Ubuntu
+        7.5.0-3ubuntu1~18.04)) #113~18.04.1-Ubuntu SMP Mon Feb 7 15:02:59 UTC 2022","hostname":"mmerritt-XPS-13-9360"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 01 Mar 2023 15:10:29 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '658'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Idempotency-Key:
+      - e1f7f073-96c6-4de3-8847-8facbf081c8c
+      Original-Request:
+      - req_N1CHj7Upau9TlU
+      Request-Id:
+      - req_N1CHj7Upau9TlU
+      Stripe-Should-Retry:
+      - 'false'
+      Stripe-Version:
+      - '2022-11-15'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id": "cus_NRkod4P1gHu3ce",
+          "object": "customer",
+          "address": null,
+          "balance": 0,
+          "created": 1677683427,
+          "currency": null,
+          "default_source": null,
+          "delinquent": false,
+          "description": null,
+          "discount": null,
+          "email": "one@example.com",
+          "invoice_prefix": "2324C8C2",
+          "invoice_settings": {
+            "custom_fields": null,
+            "default_payment_method": "pm_1MgrIWAd1SFRKFWW7Em1vcyf",
+            "footer": null,
+            "rendering_options": null
+          },
+          "livemode": false,
+          "metadata": {},
+          "name": "User One",
+          "next_invoice_sequence": 1,
+          "phone": null,
+          "preferred_locales": [],
+          "shipping": null,
+          "tax_exempt": "none",
+          "test_clock": null
+        }
+  recorded_at: Wed, 01 Mar 2023 15:10:28 GMT
+recorded_with: VCR 6.1.0
